@@ -39,7 +39,7 @@ const vendor = fuse.bundle('vendor').instructions('~ index.ts')
 const app = fuse.bundle('app').instructions(`!> [index.ts]`)
 
 if (!isProduction) {
-    fuse.dev({ root: false, port: 8090 }, server => {
+    fuse.dev({ root: false, port: 8010 }, server => {
         const dist = path.resolve('./dist')
         const app = server.httpServer.app
         app.use('/', express.static(path.join(dist)))
